@@ -63,15 +63,18 @@ def create_dir():
 
 
 def create_file(dir, xml):
+    """
     date_str = datetime.datetime.now().strftime('%Y%m%d%H%M%S')
     filename = '{0}-{1}.{2}'.format(os.path.basename(_XML_URL).split('.', 1)[0],
                                                 date_str,
                                                 'json')
-
+    """
+    filename = '{0}.{1}'.format(os.path.basename(_XML_URL).split('.', 1)[0], 'json')
     file_path = os.path.join(dir, filename)
     xml2json_file(xml, file_path)
 
 
+"""
 def rotation_file(dir):
     path = pathlib.Path(dir)
     files = path.glob('*.json')
@@ -87,7 +90,7 @@ def rotation_file(dir):
             continue
 
     return
-
+"""
 
 
 # - - - - - - - - - - - - - - - - - - - -
@@ -105,7 +108,7 @@ def main():
 
     create_file(dir, xml) 
 
-    rotation_file(dir)
+    # rotation_file(dir)
 
     
 if __name__ == '__main__':
