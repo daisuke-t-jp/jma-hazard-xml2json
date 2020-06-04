@@ -1,8 +1,9 @@
 name: cron-deploy
 
 on:
-  schedule:
-    - cron:  '0 3 * * *'
+  push:
+    branches-ignore:
+      - '**'
 
 jobs:
   build:
